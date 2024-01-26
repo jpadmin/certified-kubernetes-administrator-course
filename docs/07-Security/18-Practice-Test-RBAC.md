@@ -1,13 +1,13 @@
 # Practice Test - RBAC
-  - Take me to [Practice Test](https://kodekloud.com/courses/539883/lectures/9816669)
+  - Take me to [Practice Test](https://kodekloud.com/topic/practice-test-role-based-access-controls/)
 
 Solutions to practice test - RBAC
-- Run the command kubectl describe pod kube-apiserver-master -n kube-system and look for --authorization-mode
+- Run the command kubectl describe pod kube-apiserver-controlplane -n kube-system and look for --authorization-mode
   
   <details>
   
   ```
-  $ kubectl describe pod kube-apiserver-master -n kube-system
+  $ kubectl describe pod kube-apiserver-controlplane -n kube-system
   ```
   
   </details>

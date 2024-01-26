@@ -1,5 +1,5 @@
 # Practice Test - Multiple Schedulers
-  - Take me to [Practice Test](https://kodekloud.com/courses/539883/lectures/9816597)
+  - Take me to [Practice Test](https://kodekloud.com/topic/practice-test-multiple-schedulers/)
   
 Solutions to practice test - multiple schedulers
 - Run the command 'kubectl get pods --namespace=kube-system'
@@ -11,21 +11,31 @@ Solutions to practice test - multiple schedulers
   ```
   </details>
 
-- Run the command 'kubectl describe pod kube-scheduler-master --namespace=kube-system'
+- Run the command 'kubectl describe pod kube-scheduler-controlplane --namespace=kube-system'
 
   <details>
 
   ```
-  $ kubectl describe pod kube-scheduler-master --namespace=kube-system
+  $ kubectl describe pod kube-scheduler-controlplane --namespace=kube-system
+  ```
+  </details>
+  
+- Use the imperative command to create the configmap with option --from-file
+
+  <details>
+
+  ```
+  $ kubectl create -n kube-system configmap my-scheduler-config --from-file=/root/my-scheduler-config.yaml
   ```
   </details>
 
-- Use the file at /etc/kubernetes/manifests/kube-scheduler.yaml to create your own scheduler. View answer file at /var/answers
+- Use the file at /root/my-scheduler.yaml to create your own scheduler with correct image.
+
 
   <details>
 
   ```
-  $ kubectl create -f my-scheduler.yaml
+  $ kubectl create -f /root/my-scheduler.yaml
   ```
   </details>
 
@@ -40,11 +50,5 @@ Solutions to practice test - multiple schedulers
   $ kubectl create -f /root/nginx-pod.yaml
   ```
   </details>
-
-
-
-
-
-
 
 

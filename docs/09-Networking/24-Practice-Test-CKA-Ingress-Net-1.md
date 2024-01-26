@@ -1,6 +1,6 @@
 # Practice Test CKA Ingress 1
 
-  - Take me to [Lab](https://kodekloud.com/courses/certified-kubernetes-administrator-with-practice-tests/lectures/10402088)
+  - Take me to [Practice Test](https://kodekloud.com/topic/practice-test-cka-ingress-networking-1/)
 
 #### Solution 
 
@@ -127,11 +127,12 @@
  
         ```
         kubectl edit ingress --namespace app-space
- 
+        ```
         Change the path from /watch to /stream
     
         OR
  
+        ```yaml
         apiVersion: v1
         items:
         - apiVersion: extensions/v1beta1
@@ -198,11 +199,11 @@
 
       <details>
 
-       ```
-        Run the command 'kubectl edit ingress --namespace app-space' and add a new Path entry for the new service.
+        Run the command `kubectl edit ingress --namespace app-space` and add a new Path entry for the new service.
 
         OR
 
+       ```yaml
        apiVersion: v1
        items:
        - apiVersion: extensions/v1beta1
@@ -274,23 +275,27 @@
 
       <details>
 
+      ```yaml
+      apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: test-ingress
+        namespace: critical-space
+        annotations:
+          nginx.ingress.kubernetes.io/rewrite-target: /
+          nginx.ingress.kubernetes.io/ssl-redirect: "false"
+      spec:
+        rules:
+        - http:
+            paths:
+            - path: /pay
+              pathType: Prefix
+              backend:
+                service:
+                  name: pay-service
+                  port:
+                    number: 8282 
        ```
-        apiVersion: extensions/v1beta1
-        kind: Ingress
-        metadata:
-          name: test-ingress
-          namespace: critical-space
-          annotations:
-            nginx.ingress.kubernetes.io/rewrite-target: /
-        spec:
-          rules:
-          - http:
-              paths:
-              - path: /pay
-                backend:
-                  serviceName: pay-service
-                  servicePort: 8282
-        ```
         </details>
 
   23. Check the Solution

@@ -1,5 +1,5 @@
 # Labels and Selectors
-  - Take me to [Video Tutorial](https://kodekloud.com/courses/539883/lectures/9816604)
+  - Take me to [Video Tutorial](https://kodekloud.com/topic/labels-and-selectors/)
   
 In this section, we will take a look at **`Labels and Selectors`**
 
@@ -55,15 +55,15 @@ Kubernetes uses labels to connect different objects together
      selector:
        matchLabels:
         app: App1
-    template:
-      metadata:
-        labels:
-          app: App1
-          function: Front-end
-      spec:
-        containers:
-        - name: simple-webapp
-          image: simple-webapp   
+     template:
+       metadata:
+         labels:
+           app: App1
+           function: Front-end
+       spec:
+         containers:
+         - name: simple-webapp
+           image: simple-webapp   
    ```
 
   ![lrs](../../images/lrs.PNG)
